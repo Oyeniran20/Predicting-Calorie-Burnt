@@ -68,7 +68,7 @@ def main():
 
     # Sidebar navigation
     with st.sidebar:
-        st.image("calories_banner.jpg", use_column_width=True)
+        st.image("calories_banner.jpg", use_container_width=True)
         st.header("⚡ Navigation")
         menu = st.radio("Go to:", ["🏋️‍♂️ Prediction", "📖 About"])
         st.markdown("---")
