@@ -13,74 +13,86 @@ st.set_page_config(
 
 # Custom CSS for beautification
 def load_custom_css():
-    # Custom CSS for a gold-themed water-drop background and stylish UI
+    # Custom CSS for a refined light theme
     custom_css = """
         <style>
-            /* Water-drop animated background */
+            /* Set a clean, elegant light background */
             body {
-                background-image: url('https://i.imgur.com/wap7vZy.jpg');  /* High-quality abstract background */
-                background-size: cover;
-                background-position: center;
-                background-attachment: fixed;
-                color: #E0E0E0;
+                background-color: #FFF8E7;  /* Soft cream */
+                color: #4B3621;  /* Deep brown for readability */
             }
-    
-            /* Fixed header styling */
+
+            /* Fixed Title Styling */
             .stMarkdown h1, .stMarkdown h2 {
-                color: #FFD700 !important;  /* Gold headers */
-                font-family: 'Georgia', serif;  /* Premium font */
-                text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3); /* Subtle glow */
+                color: #DAA520 !important; /* Gold headings */
+                font-family: 'Georgia', serif;
+                text-shadow: 1px 1px 3px rgba(218, 165, 32, 0.3);
+                position: sticky;
+                top: 0;
+                background-color: #FFF8E7; /* Ensures it's readable */
+                padding: 10px 0;
+                z-index: 100;
             }
-    
-            /* Sidebar Styling */
+
+            /* Light Sidebar */
             .stSidebar {
-                background-color: #1E1E1E !important;  /* Dark sidebar */
+                background-color: #FAF3DD !important;
+                border-right: 3px solid #DAA520;
                 padding: 20px;
                 border-radius: 10px;
             }
-    
+
+            /* Social Media Links with Icons */
+            .stSidebar a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                font-weight: bold;
+                color: #4B3621;
+                margin-bottom: 10px;
+            }
+
+            .stSidebar a img {
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+
             /* Buttons */
             .stButton > button {
                 border-radius: 10px;
-                background-color: #FFD700;
+                background-color: #DAA520;
                 color: #121212;
                 font-size: 18px;
                 padding: 12px 24px;
                 font-weight: bold;
-                box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+                box-shadow: 0px 4px 10px rgba(218, 165, 32, 0.3);
             }
-    
+
             .stButton > button:hover {
                 background-color: #FFC107;
             }
-    
-            /* Input fields */
+
+            /* Input Fields */
             .stTextInput, .stNumberInput, .stSelectbox {
-                background-color: #1E1E1E;
-                color: #E0E0E0;
+                background-color: #FAF3DD;
+                color: #4B3621;
                 border-radius: 5px;
             }
-    
-            /* Center align prediction output */
-            .stSuccess {
-                text-align: center;
-                font-size: 24px;
-                font-weight: bold;
-                color: #FFD700 !important;
-            }
-    
+
             /* Footer */
             .footer {
                 position: fixed;
                 bottom: 10px;
                 width: 100%;
                 text-align: center;
-                color: #FFD700;
+                color: #DAA520;
                 font-size: 14px;
             }
         </style>
     """
     st.markdown(custom_css, unsafe_allow_html=True)
+
     
 # Function to decompress model files
 def decompress_file(compressed_path, output_path):
@@ -118,6 +130,19 @@ def main():
     st.sidebar.header("⚡ Navigation")
     menu = st.sidebar.radio("Go to:", ["🏋️‍♂️ Prediction", "📖 About"])
     st.sidebar.markdown("---")
+    
+    # Add social media links with logos
+    st.sidebar.write("👤 Developed by **Matthew**")
+    st.sidebar.markdown(
+        """
+        [<img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20"/> LinkedIn](https://www.linkedin.com/in/oyeniran-matthew/)  
+        [<img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="20"/> Twitter](https://x.com/idmathex)  
+        [<img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="20"/> Email](mailto:oyeniranmatthew@gmail.com)  
+        [<img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" width="20"/> WhatsApp](https://wa.me/2348106171072)
+        """,
+        unsafe_allow_html=True
+    )
+
     st.sidebar.write("👤 Developed by **Matthew**")
     st.sidebar.write("[LinkedIn](https://www.linkedin.com/in/oyeniran-matthew/)")
     st.sidebar.write("[Twitter](https://x.com/idmathex)")
