@@ -13,47 +13,75 @@ st.set_page_config(
 
 # Custom CSS for beautification
 def load_custom_css():
+    # Custom CSS for a gold-themed water-drop background and stylish UI
     custom_css = """
         <style>
+            /* Water-drop animated background */
             body {
-                background: url('https://source.unsplash.com/1600x900/?water,abstract') no-repeat center center fixed;
+                background-image: url('https://i.imgur.com/wap7vZy.jpg');  /* High-quality abstract background */
                 background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
                 color: #E0E0E0;
             }
-            .stButton > button {
-                border-radius: 12px;
-                background-color: #FFD700;
-                color: black;
-                font-size: 18px;
-                font-weight: bold;
-                padding: 10px 20px;
-            }
-            .stButton > button:hover {
-                background-color: #FFA500;
-            }
-            .stSidebar {
-                background-color: #1E1E1E;
-                color: white;
-            }
+    
+            /* Fixed header styling */
             .stMarkdown h1, .stMarkdown h2 {
-                color: #FFD700;
-                font-family: 'Georgia', serif;
+                color: #FFD700 !important;  /* Gold headers */
+                font-family: 'Georgia', serif;  /* Premium font */
+                text-shadow: 2px 2px 4px rgba(255, 215, 0, 0.3); /* Subtle glow */
             }
-            .header {
-                position: fixed;
-                top: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, 0.8);
-                padding: 10px 0;
-                z-index: 999;
+    
+            /* Sidebar Styling */
+            .stSidebar {
+                background-color: #1E1E1E !important;  /* Dark sidebar */
+                padding: 20px;
+                border-radius: 10px;
+            }
+    
+            /* Buttons */
+            .stButton > button {
+                border-radius: 10px;
+                background-color: #FFD700;
+                color: #121212;
+                font-size: 18px;
+                padding: 12px 24px;
+                font-weight: bold;
+                box-shadow: 0px 4px 10px rgba(255, 215, 0, 0.3);
+            }
+    
+            .stButton > button:hover {
+                background-color: #FFC107;
+            }
+    
+            /* Input fields */
+            .stTextInput, .stNumberInput, .stSelectbox {
+                background-color: #1E1E1E;
+                color: #E0E0E0;
+                border-radius: 5px;
+            }
+    
+            /* Center align prediction output */
+            .stSuccess {
                 text-align: center;
                 font-size: 24px;
                 font-weight: bold;
+                color: #FFD700 !important;
+            }
+    
+            /* Footer */
+            .footer {
+                position: fixed;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                color: #FFD700;
+                font-size: 14px;
             }
         </style>
     """
     st.markdown(custom_css, unsafe_allow_html=True)
-
+    
 # Function to decompress model files
 def decompress_file(compressed_path, output_path):
     with gzip.open(compressed_path, "rb") as f_in, open(output_path, "wb") as f_out:
@@ -86,7 +114,7 @@ def main():
     preprocessor = load_preprocessor()
 
     st.markdown("<div class='header'>🔥 Calorie Burn Predictor</div>", unsafe_allow_html=True)
-    st.sidebar.image("calories_banner.jpg", use_column_width=True)
+    st.sidebar.image("calories_banner.jpg", use_container_width=True)
     st.sidebar.header("⚡ Navigation")
     menu = st.sidebar.radio("Go to:", ["🏋️‍♂️ Prediction", "📖 About"])
     st.sidebar.markdown("---")
