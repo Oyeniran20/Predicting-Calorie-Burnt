@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#FF5722"
-backgroundColor = "#FAFAFA"
-secondaryBackgroundColor = "#F0F2F6"
-textColor = "#333333"
-font = "sans serif"
+primaryColor = "#FFD700"  # Luxurious gold accent
+backgroundColor = "#121212"  # Dark premium background
+secondaryBackgroundColor = "#1E1E1E"  # Dark contrast section
+textColor = "#E0E0E0"  # Soft white text for readability
+font = "serif"  # Elegant, premium feel
