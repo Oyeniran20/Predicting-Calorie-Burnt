@@ -1,6 +1,6 @@
 [theme]
-primaryColor = "#FFD700"  # Luxurious gold accent
-backgroundColor = "#121212"  # Dark premium background
-secondaryBackgroundColor = "#1E1E1E"  # Dark contrast section
-textColor = "#E0E0E0"  # Soft white text for readability
+primaryColor = "#DAA520"  # Rich goldenrod
+backgroundColor = "#FFF8E7"  # Soft cream (warm, luxurious feel)
+secondaryBackgroundColor = "#FAF3DD"  # Lighter cream for contrast
+textColor = "#4B3621"  # Deep brown (classy & readable)
 font = "serif"  # Elegant, premium feel
