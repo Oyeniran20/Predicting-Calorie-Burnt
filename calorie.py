@@ -151,15 +151,15 @@ def main():
         
         with col1:
             age = st.number_input("👤 Age", min_value=10, max_value=100, value=25, step=1)
-            height = st.number_input("📏 Height (cm)", min_value=100.0, max_value=250.0, value=170.0, step=0.1)
-            weight = st.number_input("⚖️ Weight (kg)", min_value=30.0, max_value=200.0, value=70.0, step=0.1)
+            height = st.number_input("📏 Height (cm)", min_value=100.0, max_value=500.0, value=170.0, step=0.1)
+            weight = st.number_input("⚖️ Weight (kg)", min_value=30.0, max_value=200.0, value=95.0, step=0.1)
             gender = st.selectbox("🧑‍🤝‍🧑 Gender", ["Male", "Female"])
             age_group = get_age_group(age)
         
         with col2:
             duration = st.number_input("⏳ Exercise Duration (minutes)", min_value=1, max_value=300, value=30, step=1)
-            heart_rate = st.number_input("❤️ Heart Rate (bpm)", min_value=40.0, max_value=220.0, value=120.0, step=0.1)
-            body_temp = st.number_input("🌡️ Body Temperature (°C)", min_value=32.0, max_value=42.0, value=37.0, step=0.1)
+            heart_rate = st.number_input("❤️ Heart Rate (bpm)", min_value=20.0, max_value=220.0, value=120.0, step=0.1)
+            body_temp = st.number_input("🌡️ Body Temperature (°C)", min_value=10.0, max_value=52.0, value=27.0, step=0.1)
 
         
         bmi = weight / ((height / 100) ** 2)
