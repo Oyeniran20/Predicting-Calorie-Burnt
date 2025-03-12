@@ -12,9 +12,22 @@ st.set_page_config(
 
 # Function to load artifacts
 def load_components():
-    preprocessor = joblib.load('preprocessor.pkl')
-    model = joblib.load('random_forest_model.pkl')
-    return preprocessor, model
+    compressed_model_path = "random_forest_model.pkl.gz"
+    compressed_preprocessor_path = "preprocessor.pkl.gz"
+    
+    model_path = "random_forest_model.pkl"
+    preprocessor_path = "preprocessor.pkl"
+
+    # Decompress files
+    decompress_file(compressed_model_path, model_path)
+    decompress_file(compressed_preprocessor_path, preprocessor_path)
+
+    # Load the model and preprocessor
+    model = joblib.load(model_path)
+    preprocessor = joblib.load(preprocessor_path)
+
+    return model, preprocessor
+    
 
 # Function to preprocess user input
 def preprocess_input(input_data, preprocessor):
@@ -56,10 +69,11 @@ def main():
             height = st.number_input("📏 Height (cm)", value=170.0)
             weight = st.number_input("⚖️ Weight (kg)", value=70.0)
             duration = st.number_input("⏳ Duration (mins)", value=30.0)
-            heart_rate = st.number_input("💓 Heart Rate", value=80.0)
+            
         
         with col2:
             body_temp = st.number_input("🌡️ Body Temperature (°C)", value=36.5)
+            heart_rate = st.number_input("💓 Heart Rate", value=80.0)
             gender = st.selectbox("⚧️ Gender", ["Male", "Female"])
             
         # Calculate BMI and Age Group
