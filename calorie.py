@@ -143,12 +143,6 @@ def main():
         unsafe_allow_html=True
     )
 
-    st.sidebar.write("👤 Developed by **Matthew**")
-    st.sidebar.write("[LinkedIn](https://www.linkedin.com/in/oyeniran-matthew/)")
-    st.sidebar.write("[Twitter](https://x.com/idmathex)")
-    st.sidebar.write("📧 oyeniranmatthew@gmail.com")
-    st.sidebar.write("📱 WhatsApp: +2348106171072")
-
     if menu == "🏋️‍♂️ Prediction":
         st.title("🔥 Predict Your Calorie Burn")
         st.markdown("**Estimate how many calories you burn based on exercise details.**")
